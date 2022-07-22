@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name='camera_array'>
+    <static>true</static>
+    <link name='camera_centroid_Nikon_H_1'>
+      <pose>0 0 1 0 0 0</pose>
+      <visual name='visual'>
+        <geometry>
+          <mesh>
+            <uri>file://frustum.stl</uri>
+            <scale>0.05 0.05 0.05</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor type="camera" name="camera_Nikon_H_1">
+        <always_on>1</always_on>
+        <visualize>true</visualize>
+        <update_rate>25</update_rate>
+        <camera name="camera_name_Nikon_H_1">
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+        </camera>
+        <plugin name="camera_plugin" filename="libgazebo_ros_camera.so">
+          <frame_name>camera_frame_1</frame_name>
+        </plugin>
+      </sensor>
+    </link>
+
+  </model>
+</sdf>
